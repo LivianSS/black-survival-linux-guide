@@ -61,7 +61,7 @@ This keeps everything stable and avoids the problems we ran into (WOW64 mode iss
  ### Install the dependecies required by the installer
  These are the only ones we need here:
  ```bash
-WINEPREFIX"/path/to/prefix" winetricks -q corefonts dotnet48 gdiplus wmp9
+WINEPREFIX"/path/to/installer-prefix" winetricks -q corefonts dotnet48 gdiplus
 ```
 
 ### 2. Create the Game Prefix
@@ -72,8 +72,8 @@ WINEPREFIX="$HOME/.black-survival" wineboot --init
 
 ### Install the dependencies needed by the game prefix:
 ```bash
-WINEPREFIX="$HOME/.black-survival" winetricks -q corefonts dotnet48 vcrun2015 d3dcompiler_47
-
+WINEPREFIX="$HOME/bs-prefix" winetricks -q corefonts dotnet48 vcrun2015 d3dcompiler_47
+```
 # Installing Black Survival Project Lumia
 The Project Lumia installer requires Proton‑GE’s improved WOW64 support to render the UI properly.
 A normal Wine prefix cannot run the installer.
@@ -90,7 +90,7 @@ You can delete this prefix after installation, because the actual game files wil
 # Installing Discord PTB Portable
 Installing the Discord PTB is pretty straight forward just navigate to where the installer is located and run:
 ```bash
-WINEPREFIX="/path/to/game-prefix" wine discord-ptb-portable-win64-<version>-setup
+WINEPREFIX="/path/to/bs-prefix" wine discord-ptb-portable-win64-<version>-setup
 ```
 Once the Discord PTB installer finishes:
 
@@ -120,13 +120,13 @@ To fix this, we manually set Firefox as the handler for http and https links.
 Make sure you have Firefox installed inside your game prefix.
 You can install it with:
 ```bash
-WINEPREFIX="/path/to/game-prefix" winetricks firefox
+WINEPREFIX="/path/to/bs-prefix" winetricks firefox
 ```
 >**Note:** You can use diffrent browser if you want.
 
 ### 1. Open regedit on your game prefix
 ```bash
-WINEPREFIX="/path/to/game-prefix" wine regedit
+WINEPREFIX="/path/to/bs-prefix" wine regedit
 ```
 
 ### 2. Navigate to
@@ -221,6 +221,6 @@ WINEPREFIX="/path/to/prefix" wine executable.exe
 
    To change it:
    ```bash
-   WINEPREFIX="/path/to/prefix" winecfg
+   WINEPREFIX="/path/to/bs-prefix" winecfg
    ```
    and simply change the default to Windows 10.
