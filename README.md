@@ -174,6 +174,14 @@ fi
 # Start the game
 wine "$GAME_LAUNCHER"
 
+while ! pgrep -f "BlackSurvival.exe" >/dev/null; do
+    sleep 1
+done
+
+while pgrep -f "BlackSurvival.exe" >/dev/null; do
+    sleep 1
+done
+
 # When the game closes, shut down the Discord PTB process
 pkill -f "DiscordPTB.exe"
 ```
