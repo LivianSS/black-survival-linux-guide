@@ -98,7 +98,7 @@ Once the Discord PTB installer finishes:
 
 -Log in to your account
 
-### At this point:
+## At this point:
 
 If you run Black Survival’s launcher, it should open normally and download any updates.
 
